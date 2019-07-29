@@ -1,0 +1,192 @@
+#!C:\Strawberry\perl\bin\perl.exe -wT
+
+use CGI;
+use DBI;
+use CGI::Carp qw (fatalsToBrowser);
+
+use strict;
+use warnings;
+
+my $q = CGI->new;
+my $query=CGI->new;
+my $uname = $query->param('uname');
+my $pword = $query->param('pword');
+my $admin = "admin";
+my $pass = "password";
+print $q->header();
+if($uname eq $admin && $pword eq $pass){
+    my $url = "/perl/dashboard.html";
+    my $t=1;
+    print "<META HTTP-EQUIV=refresh CONTENT=\"$t;URL=$url\">\n";
+    }
+    else{
+        my $url = "/perl/";
+        my $t=1;
+        print "<META HTTP-EQUIV=refresh CONTENT=\"$t;URL=$url\">\n";
+    }
+
+
+
+
+    #!C:\Strawberry\perl\bin\perl.exe -wT
+
+use CGI;
+use DBI;
+use CGI::Carp qw (fatalsToBrowser);
+
+use strict;
+use warnings;
+
+my $q = CGI->new;
+my $query=CGI->new;
+my $uname = $query->param('uname');
+my $pword = $query->param('pword');
+my $admin = "admin";
+my $pass = "password";
+print $q->header();
+if($uname eq $admin && $pword eq $pass){
+        $query = new CGI;
+
+#----------------------------------------------------------------------#
+#  2. Issue the redirection request.  (Always use an 'absolute' URL.)  #
+#----------------------------------------------------------------------#
+
+print $query->redirect('http://www.devdaily.com/');
+    }
+    else{
+        my $url = "/perl/";
+        my $t=1;
+        print "<META HTTP-EQUIV=refresh CONTENT=\"$t;URL=$url\">\n";
+    }
+
+
+
+
+
+    <html>
+    <head>
+        <style>
+        body{
+            background-image: linear-gradient(to right,#6CDEFF,#ACFEEA,#FEECD4,#FFB3C8);
+        }
+        table{
+			background-color:aliceblue;
+            border: 1px solid black;
+        }
+        th,td{
+            padding: 10px;
+            text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+        <table border=1px>
+            <tr>
+                <th>Name</th>
+                <th>Room Number</th>
+                <th>Mobile Number</th>
+                <th>No of Persons</th>
+            </tr>
+            <tr>
+                <td>$name</td>
+                <td>$room_no</td>
+                <td>$mobile</td>
+                <td>$persons</td>
+            </tr>
+        </table>
+        <form>
+            <input type="text" placeholder="Room Number"><br>
+            <input type="button" value="Search" onclick="/cgi-bin/process.cgi">
+        </form>
+    </body>
+</html>
+
+
+use strict;
+use warnings;
+my $url = "http://google.com";
+print "Location: $url\n\n";
+
+
+
+
+#!C:\Strawberry\perl\bin\perl.exe -wT
+
+use CGI;
+use DBI;
+use CGI::Carp qw (fatalsToBrowser);
+
+use strict;
+use warnings;
+
+
+
+my $dsn = "DBI:mysql:hotel";
+
+my $dbh = DBI->connect($dsn, "root","") or die $DBI::errstr;
+
+my $q = CGI->new;
+my $query=CGI->new;
+my $name=$query->param('name');
+my $room_no=$query->param('roomno');
+my $mobile=$query->param('mobile');
+my $persons=$query->param('persons');
+
+my $sth = $dbh->prepare("INSERT INTO users(name,room_no, mobile, persons) VALUES(?,?,?,?);");
+
+$sth -> execute($name,$room_no,$mobile,$persons);
+print $q -> CGI::header('text/html');
+my $html ="
+<html>
+    <head>
+        <style>
+		body{
+            background-image: linear-gradient(to right,#FFEDD0,#A1E6FF);
+			text-align: center;
+        }
+        table{
+			margin-top: 100px;
+			margin-left: 550px;
+			background-color:aliceblue;
+            border: 1px solid black;
+			border-radius:5px;
+        }
+		th,td{
+            padding: 10px;
+            text-align: center;
+        }
+            </style>
+    </head>
+    <body>
+        <table border=1px>
+            <tr>
+                <th>Name</th>
+                <th>Room Number</th>
+                <th>Mobile Number</th>
+                <th>No of Persons</th>
+            </tr>
+            <tr>
+                <td>$name</td>
+                <td>$room_no</td>
+                <td>$mobile</td>
+                <td>$persons</td>
+            </tr>
+        </table>
+		<form action=/cgi-bin/process.pl method=POST>
+            <input type=text placeholder=Room Number><br>
+            <input type=submit value=Search>
+        </form>
+    </body>
+</html>
+";
+print $html;
+	
+	print "Success";
+
+
+
+    my $password = 'hush hush';
+my $id = 1;
+ 
+$dbh->do('UPDATE people SET password = ? WHERE id = ?',undef,$password,$id);
+

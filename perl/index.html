@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<head>
+	<style type="text/css">
+		body{
+			background-image: url("img/bg.jpg");
+			background-size: cover;
+			background-repeat: no-repeat;
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		}
+		h1{
+			background: -webkit-linear-gradient(rgb(2, 247, 255),rgb(0, 53, 228));
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-size: 3vw;
+			margin-left: 40vw;
+		}
+		.formbox{
+			text-align: center;
+			margin-left: 47vw;
+			margin-right: 20vw;
+			padding: 2vw;
+			border-radius: 2vw;
+			background-image: linear-gradient(to bottom right,#0C97FA,#16E1F5);
+			box-shadow: 2vh 2vh 6vh 0.2vh rgba(12, 151, 250, 0.747);
+			color: #FFFFFF;
+		}
+		.formbox input{
+			width: 20vw;
+			padding:  1vw;
+			margin-bottom: 1.3vw;
+			border-radius: 0.5vw;
+			font-size: 1vw;
+		}
+		.formbox p{
+			font-size: 3vh;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+		}
+		.formbox #loginbutton{
+			width: 10vw;
+			border-radius: 1vw;
+			background-color: #2fc2df;
+		}
+	</style>
+</head>
+	<body>
+		<h1>HOTEL MANAGEMENT SYSTEM</h1>
+		<div class="formbox">
+			<form action=/cgi-bin/login.cgi method=POST>
+				<p>User Name:</p>
+				<input type="text" name="uname" label="Username" placeholder="User Name" required><br/>
+				<p>Password:</p>
+				<input type="password" name="pword" label="Password" placeholder="Password" required><br/>
+				<input type="submit" value="Login" id="loginbutton">
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<head>
+	<style type="text/css">
+		body{
+			background-image: url("img/bg.jpg");
+			background-size: cover;
+			background-repeat: no-repeat;
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		}
+		h1{
+			background: -webkit-linear-gradient(rgb(2, 247, 255),rgb(0, 53, 228));
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-size: 3vw;
+			margin-left: 40vw;
+		}
+        .available{
+            text-align: center;
+            float: left;
+            width: 25vw;
+            height: 30vh;
+            margin-left: 3vw;
+			padding-bottom: 1vh;
+			padding-top: 1vh;
+			border-radius: 2vw;
+			background-image: linear-gradient(to bottom right,#0C97FA,#16E1F5);
+			box-shadow: 2vh 2vh 6vh 0.2vh rgba(12, 151, 250, 0.747);
+			color: #FFFFFF;
+        }
+        .checkout{
+            text-align: center;
+            float: left;
+            width: 30vw;
+            height: 30vh;
+            margin-left: 3vw;
+			padding-bottom: 1vh;
+			padding-top: 1vh;
+			border-radius: 2vw;
+			background-image: linear-gradient(to bottom right,#0C97FA,#16E1F5);
+			box-shadow: 2vh 2vh 6vh 0.2vh rgba(12, 151, 250, 0.747);
+			color: #FFFFFF;
+        }
+		.checkout input{
+			width: 12vw;
+			padding:  0.8vw;
+			margin-top: 1vw;
+			border-radius: 1vh;
+			font-size: 2vh;
+		}
+		#checkoutbtn{
+			width: 7vw;
+			border-radius: 1vw;
+			background-color: #2fc2df;
+		}
+		.formbox{
+			text-align: center;
+            width: 30vw;
+            float: right;
+            margin-right: 4vw;
+			padding-bottom: 2vw;
+			padding-top: 1vw;
+			border-radius: 2vw;
+			background-image: linear-gradient(to bottom right,#0C97FA,#16E1F5);
+			box-shadow: 2vh 2vh 6vh 0.2vh rgba(12, 151, 250, 0.747);
+			color: #FFFFFF;
+		}
+		.formbox input,select{
+			width: 20vw;
+			padding:  0.8vw;
+			border-radius: 1vh;
+			font-size: 2vh;
+		}
+		.formbox p{
+			font-size: 2.5vh;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+		}
+		.formbox #registerbtn{
+			width: 10vw;
+			border-radius: 1vw;
+			background-color: #2fc2df;
+		}
+		.searchbox{
+			text-align: center;
+            float: right;
+            width: 20vw;
+            height: 30vh;
+            margin-right: 4vw;
+			margin-top: 6vh;
+			padding-bottom: 1vh;
+			padding-top: 1vh;
+			border-radius: 2vw;
+			background-image: linear-gradient(to bottom right,#0C97FA,#16E1F5);
+			box-shadow: 2vh 2vh 6vh 0.2vh rgba(12, 151, 250, 0.747);
+			color: #FFFFFF;
+		}
+		.searchbox input{
+			width: 12vw;
+			padding:  0.8vw;
+			border-radius: 1vh;
+			font-size: 2vh;
+		}
+		#searchbtn{
+			width: 7vw;
+			margin-top: 1vw;
+			border-radius: 1vw;
+			background-color: #2fc2df;
+		}
+		#viewbtn{
+			width: 12vw;
+			padding:  0.8vw;
+			margin-top: 1vw;
+			border-radius: 1vh;
+			font-size: 2vh;
+			background-color: #2fc2df;
+		}
+	</style>
+</head>
+	<body>
+		<h1>HOTEL MANAGEMENT SYSTEM</h1>
+		
+		
+        <div class="available">
+            <h3>Rooms available</h3>
+            <form action=/cgi-bin/getrooms.cgi method=POST>
+				<input type="submit" value="View Available Rooms" id="viewbtn">
+			</form>
+		</div>
+		
+        <div class="checkout">
+			<h3>Checkout</h3>
+			<form action=/cgi-bin/checkout.cgi method=POST>
+				<input type="text" name="roomno" label="Room no" placeholder="Room Number" required>
+				<input type="submit" value="Check-out" id="checkoutbtn">
+			</form>
+		</div>
+		
+		<div class="formbox">
+			<h3>Register User Room</h3>
+			<form action=/cgi-bin/process.cgi method=POST>
+				<p>Name:</p>
+				<input type="text" name="name" label="Name" placeholder="Full Name" required><br/>
+				<p>Room Number:</p>
+				<input type="text" name="roomno" label="Room No" placeholder="Room Number" required><br/>
+				<p>Contact Number:</p>
+				<input type="number" name="mobile" placeholder="Contact" required><br/>
+				<p>Number of People:</p>
+				<select name="persons" required> 
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select><br/><br/>
+				<input type="submit" value="Check-in" id="registerbtn">
+			</form>
+		</div>
+
+		<div class="searchbox">
+			<h3>Search</h3>
+			<form action=/cgi-bin/fetch.cgi method=POST>
+				<input type=text placeholder="Room Number" name=roomno required><br>
+				<input type=submit value=Search id="searchbtn">
+			</form>
+		</div>
+		<div style="float: left;width:3.2vw;margin-top:40vh;background-color:#2fc2df;margin-left:4vh;padding: 1vw;border-radius: 1vw; ">
+			<a href="index.html" style="color: #FFF;">Logout</a>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+   <head>
+   <style>
+       body{
+           background-image: url('img/bg.jpg')
+       }
+        table{
+            background-image: linear-gradient(to bottom right,#0C97FA,#16E1F5);
+            box-shadow: 2vh 2vh 6vh 0.2vh rgba(12, 151, 250, 0.747);
+            padding: 2vw;
+            border-radius: 2vw;
+            border: 1px solid rgba(12, 151, 250, 0.747);
+            color: #FFFFFF;
+        }
+        td,th{
+            border: 2px solid rgba(0, 100, 172, 0.938);
+            padding: 1vw;
+            border-radius: 5px;
+        }
+   </style>
+   </head>
+    <body>
+        <table align=center>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Room Number</th>
+                <th>Contact</th>
+                <th>Number of Rooms</th>
+            </tr>
+            <tr>
+                <td>@row[0]</td>
+                <td>@row[1]</td>
+                <td>@row[2]</td>
+                <td>@row[3]</td>
+                <td>@row[4]</td>
+            </tr>
+        </table>
+    </body>
+</html>
